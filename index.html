@@ -11,13 +11,15 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { font-family: 'Noto Sans KR', sans-serif; }
+        body { font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden; }
         .scroll-mt-20 { scroll-margin-top: 5rem; }
         .gradient-text {
             background: linear-gradient(to right, #1e40af, #4f46e5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* 부드러운 스크롤 */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="min-h-screen bg-white text-gray-800">
@@ -78,7 +80,7 @@
     </section>
 
     <!-- 환영인사 Section -->
-    <section id="환영인사" class="py-2 bg-gray-50 scroll-mt-20">
+    <section id="환영인사" class="py-4 bg-gray-50 scroll-mt-20">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
                 <!-- 목사님 인사말 카드 -->
@@ -157,7 +159,6 @@
             <p class="text-gray-700 font-bold text-lg md:text-xl mb-8">다음의 6가지 가치를 흔들림 없이 지켜나갑니다.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-                <!-- 가치 항목 1~6 -->
                 <div class="bg-gray-50 p-6 rounded-[32px] hover:shadow-xl transition-all border border-gray-100 group">
                     <div class="flex items-center gap-4 mb-3">
                         <div class="bg-white w-10 h-10 rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform"><i data-lucide="flame" class="text-red-500"></i></div>
@@ -214,13 +215,12 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="space-y-4">
                     <h3 class="text-xl font-bold text-blue-800 flex items-center gap-2"><i data-lucide="map-pin" class="text-blue-600"></i> 왜 서울신학대학교에서 예배를 드리나요?</h3>
-                    <p class="text-gray-700 leading-relaxed font-bold">저는 1999년에 “네가 개척하라”(수17:18)는 하나님의 말씀을 받고... (생략)</p>
-                    <p class="text-gray-700 leading-relaxed font-bold">그리고 2000년 1월에 서울신대 안에서 주일예배를 드리며... (생략)</p>
+                    <p class="text-gray-700 leading-relaxed font-bold">저는 1999년에 “네가 개척하라”(수17:18)는 하나님의 말씀을 받고, 일산에 개척하려고 했는데, 그때 주님이 “너는 돈 없이 교회를 개척시키겠다”고 말씀하셨고, 3일 후에 서울신대 앞에서 장소를 무료로 사용하면서 개척하게 되었습니다. 2000년 1월에 서울신대 안에서 주일예배를 드리며 수많은 사람들을 전도하는 비전을 받았고, 24년의 기다림 끝에 2024년부터 백주년기념관에서 예배를 드리고 있습니다.</p>
                 </div>
                 <div class="space-y-4">
                     <h3 class="text-xl font-bold text-blue-800 flex items-center gap-2"><i data-lucide="heart" class="text-blue-600"></i> 어떻게 목회를 하고 있나요?</h3>
-                    <p class="text-gray-700 leading-relaxed font-bold">저는 오직 하나님의 말씀의 기준을 삼고, 성령님이 감동주시는 대로만 설교하고...</p>
-                    <div class="bg-white p-6 rounded-2xl border border-blue-100 mt-2 shadow-sm">
+                    <p class="text-gray-700 leading-relaxed font-bold">오직 하나님의 말씀만을 기준으로 삼고, 성령님이 주시는 감동대로 설교하며 예수님의 모습처럼 겸손하게 목회하려 합니다. 한 분 한 분이 알곡 성도로 성숙되고 행복해지는 신앙생활을 돕는 것이 저의 목회 방향입니다.</p>
+                    <div class="bg-white p-6 rounded-2xl border border-blue-100 mt-2 shadow-sm text-center">
                         <p class="text-gray-800 mb-3 text-base md:text-lg leading-relaxed font-bold">"그분은 손에 키를 들고 타작 마당을 깨끗이 하여 <span class="text-blue-600 font-extrabold">알곡</span>은 곳간에 두시고, <span class="text-red-600 font-extrabold">쭉정이</span>는 꺼지지 않는 불에 태우실 것이다."</p>
                         <p class="text-right text-blue-600 font-extrabold text-base md:text-lg">- 마태복음 3:12 -</p>
                     </div>
@@ -236,53 +236,55 @@
                 <h2 class="text-3xl font-bold text-gray-900 mb-3 tracking-tight">예배 및 설교 안내</h2>
                 <div class="w-16 h-1 bg-blue-500 mx-auto rounded"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <!-- 예배 정보 1~3 -->
-                <div class="border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                    <div class="bg-gradient-to-br from-blue-600 to-blue-800 py-4 text-center text-white">
-                        <h3 class="text-2xl md:text-3xl font-extrabold mb-1">주일예배</h3>
-                        <span class="text-base font-medium opacity-90">청장년</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-center">
+                <div class="border rounded-2xl overflow-hidden shadow-sm">
+                    <div class="bg-gradient-to-br from-blue-600 to-blue-800 py-4 text-white">
+                        <h3 class="text-2xl font-extrabold mb-1">주일예배</h3>
+                        <span class="opacity-90">청장년</span>
                     </div>
-                    <div class="p-6 bg-gray-50 flex flex-col gap-3 font-bold text-gray-800 text-lg">
-                        <div class="flex items-center gap-3"><i data-lucide="clock" class="text-gray-500"></i> 오후 1시</div>
-                        <div class="flex items-center gap-3"><i data-lucide="map-pin" class="text-gray-500"></i> 5층 황대식홀</div>
-                    </div>
-                </div>
-                <div class="border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                    <div class="bg-gradient-to-br from-green-500 to-green-700 py-4 text-center text-white">
-                        <h3 class="text-2xl md:text-3xl font-extrabold mb-1">조이랜드</h3>
-                        <span class="text-base font-medium opacity-90">유초등부</span>
-                    </div>
-                    <div class="p-6 bg-gray-50 flex flex-col gap-3 font-bold text-gray-800 text-lg">
-                        <div class="flex items-center gap-3"><i data-lucide="clock" class="text-gray-500"></i> 오후 1시</div>
-                        <div class="flex items-center gap-3"><i data-lucide="map-pin" class="text-gray-500"></i> 4층 예배실</div>
+                    <div class="p-6 bg-gray-50 space-y-2 font-bold">
+                        <div class="flex items-center justify-center gap-2"><i data-lucide="clock" class="w-5"></i> 오후 1시</div>
+                        <div class="flex items-center justify-center gap-2"><i data-lucide="map-pin" class="w-5"></i> 5층 황대식홀</div>
                     </div>
                 </div>
-                <div class="border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                    <div class="bg-gradient-to-br from-indigo-500 to-indigo-700 py-4 text-center text-white">
-                        <h3 class="text-2xl md:text-3xl font-extrabold mb-1">하나단</h3>
-                        <span class="text-base font-medium opacity-90">중고등부</span>
+                <div class="border rounded-2xl overflow-hidden shadow-sm">
+                    <div class="bg-gradient-to-br from-green-500 to-green-700 py-4 text-white">
+                        <h3 class="text-2xl font-extrabold mb-1">조이랜드</h3>
+                        <span class="opacity-90">유초등부</span>
                     </div>
-                    <div class="p-6 bg-gray-50 flex flex-col gap-3 font-bold text-gray-800 text-lg">
-                        <div class="flex items-center gap-3"><i data-lucide="clock" class="text-gray-500"></i> 오후 1시</div>
-                        <div class="flex items-center gap-3"><i data-lucide="map-pin" class="text-gray-500"></i> 5층 예배실</div>
+                    <div class="p-6 bg-gray-50 space-y-2 font-bold">
+                        <div class="flex items-center justify-center gap-2"><i data-lucide="clock" class="w-5"></i> 오후 1시</div>
+                        <div class="flex items-center justify-center gap-2"><i data-lucide="map-pin" class="w-5"></i> 4층 예배실</div>
+                    </div>
+                </div>
+                <div class="border rounded-2xl overflow-hidden shadow-sm">
+                    <div class="bg-gradient-to-br from-indigo-500 to-indigo-700 py-4 text-white">
+                        <h3 class="text-2xl font-extrabold mb-1">하나단</h3>
+                        <span class="opacity-90">중고등부</span>
+                    </div>
+                    <div class="p-6 bg-gray-50 space-y-2 font-bold">
+                        <div class="flex items-center justify-center gap-2"><i data-lucide="clock" class="w-5"></i> 오후 1시</div>
+                        <div class="flex items-center justify-center gap-2"><i data-lucide="map-pin" class="w-5"></i> 5층 예배실</div>
                     </div>
                 </div>
             </div>
 
             <!-- 설교 영상 -->
-            <div class="mb-6 max-w-4xl mx-auto text-center">
+            <div class="max-w-4xl mx-auto text-center">
                 <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center justify-center gap-2"><i data-lucide="play-circle" class="text-red-500"></i> 설교 영상 시청하기</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- 영상 링크 반복 -->
-                    <a href="https://www.youtube.com/watch?v=biPgOXJp3AE" target="_blank" class="block border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all group">
-                        <div class="relative pt-[56.25%] bg-gray-900 overflow-hidden">
-                            <img src="https://img.youtube.com/vi/biPgOXJp3AE/hqdefault.jpg" class="absolute top-0 left-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all">
-                            <div class="absolute inset-0 flex items-center justify-center"><i data-lucide="play-circle" class="text-white w-16 h-16 opacity-90 group-hover:scale-110 transition-transform drop-shadow-lg"></i></div>
+                    <a href="https://www.youtube.com/watch?v=biPgOXJp3AE" target="_blank" class="block border rounded-2xl overflow-hidden shadow-sm group">
+                        <div class="relative pt-[56.25%] bg-gray-900">
+                            <img src="https://img.youtube.com/vi/biPgOXJp3AE/hqdefault.jpg" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
                         </div>
-                        <div class="p-5 text-left"><h4 class="font-bold text-gray-900 text-lg line-clamp-2">하나님이 인도하시는 원리</h4><span class="inline-block text-sm text-blue-600 font-bold mt-3 bg-blue-50 px-4 py-2 rounded-full">유튜브에서 시청하기 ↗</span></div>
+                        <div class="p-4 text-left font-bold">하나님이 인도하시는 원리</div>
                     </a>
-                    <!-- 추가 영상 생략 (동일 구조) -->
+                    <a href="https://www.youtube.com/watch?v=BXm0jAastn0" target="_blank" class="block border rounded-2xl overflow-hidden shadow-sm group">
+                        <div class="relative pt-[56.25%] bg-gray-900">
+                            <img src="https://img.youtube.com/vi/BXm0jAastn0/hqdefault.jpg" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all">
+                        </div>
+                        <div class="p-4 text-left font-bold">정치설교 안하는 이유</div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -328,36 +330,33 @@
     </footer>
 
     <script>
-        // Lucide Icons 초기화
-        lucide.createIcons();
+        // DOM 로드 후 초기화
+        window.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
 
-        // 현재 연도 설정
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // 모바일 메뉴 토글 함수
+        // 모바일 메뉴 토글
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
             menu.classList.toggle('hidden');
             
-            // 아이콘 교체
             if (menu.classList.contains('hidden')) {
                 icon.setAttribute('data-lucide', 'menu');
             } else {
                 icon.setAttribute('data-lucide', 'x');
             }
             lucide.createIcons();
-        </div>
+        }
 
-        // 부드러운 스크롤 함수
+        // 스크롤 함수
         function scrollToSection(id) {
             const element = document.getElementById(id);
             if (element) {
-                // 메뉴 닫기
                 document.getElementById('mobile-menu').classList.add('hidden');
                 document.getElementById('menu-icon').setAttribute('data-lucide', 'menu');
                 lucide.createIcons();
-                
                 element.scrollIntoView({ behavior: 'smooth' });
             }
         }
